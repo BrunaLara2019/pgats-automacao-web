@@ -21,7 +21,13 @@ jobs:
           node-version: '20'
 
       - name: Instalando dependências
-        run: npm install
+        run: npm ci
+
+      - name: Instalando Cypress globalmente (permite execução)
+        run: npx cypress install
+
+      - name: Dando permissão de execução ao Cypress
+        run: chmod +x ./node_modules/.bin/cypress
 
       - name: Executando testes E2E
         run: npx cypress run
