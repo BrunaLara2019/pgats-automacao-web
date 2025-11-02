@@ -136,7 +136,7 @@ describe('Automation Exercise - Testes Completos', () => {
     });
   });
 
-  it('Inscrever usuário na subscription', () => {
+  it('Verificar assinatura na página inicial', () => {
     cy.get('footer').scrollIntoView();
     cy.get('#susbscribe_email').type(userEmail);
     cy.get('#subscribe').click();
@@ -144,7 +144,7 @@ describe('Automation Exercise - Testes Completos', () => {
       .should('contain.text', 'You have been successfully subscribed!');
   });
 
- it('Fluxo completo de compra', () => {
+ it('Fazer pedido: Registre-se antes de finalizar a compra', () => {
   cy.get('a[href="/login"]').click();
 
 
